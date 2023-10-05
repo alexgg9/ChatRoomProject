@@ -15,7 +15,7 @@ target/
 .mvn/
 mvnw
 mvnw.cmd
-.config/
+config/
 
 ### Eclipse ###
 .apt_generated
