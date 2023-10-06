@@ -32,15 +32,12 @@ public class ChatController {
 
     public void initialize() {
         sendButton.setOnAction(event -> sendMessage());
-        //setUserInfo();
-        loadChatMessages();
+       loadChatMessages();
+        userLabel.setText("Usuario: " + LoginController.usuario);
+        roomLabel.setText("Sala: " + LoginController.Room);
     }
 
-    @FXML
-    public void setUserInfo(String userNickname, String roomName) {
-        userLabel.setText("Usuario: " + userNickname);
-        roomLabel.setText("Sala: " + roomName);
-    }
+
 
     // Este método se llamará cuando el usuario haga clic en el botón de enviar.
     @FXML
