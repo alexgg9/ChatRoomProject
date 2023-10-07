@@ -7,24 +7,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9B59B6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iesfranciscodelosrios.chatroomsproject.controllers.ChatController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9B59B6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iesfranciscodelosrios.chatroomsproject.controllers.ChatController">
    <children>
       <TextArea fx:id="chatTextArea" layoutX="32.0" layoutY="99.0" prefHeight="263.0" prefWidth="534.0" />
       <TextField fx:id="messageTextField" layoutX="47.0" layoutY="320.0" prefHeight="34.0" prefWidth="402.0" promptText="Mensaje..." />
-      <Button fx:id="sendButton" layoutX="455.0" layoutY="319.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="105.0" style="-fx-background-color: #CB5ACC;" text="Enviar &gt;" textFill="WHITE">
+      <Button fx:id="sendButton" layoutX="455.0" layoutY="319.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="105.0" style="-fx-background-color: #9B59B6;" text="Enviar &gt;" textFill="WHITE">
          <font>
             <Font name="Dosis SemiBold" size="16.0" />
          </font>
       </Button>
-      <Label fx:id="userLabel" layoutX="100.0" layoutY="38.0" prefHeight="28.0" prefWidth="158.0" text="User">
+      <Label fx:id="userLabel" layoutX="141.0" layoutY="38.0" prefHeight="28.0" prefWidth="106.0" text="User">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label fx:id="roomLabel" layoutX="398.0" layoutY="38.0" prefHeight="28.0" prefWidth="158.0" text="Room">
+      <Label fx:id="roomLabel" layoutX="358.0" layoutY="38.0" prefHeight="28.0" prefWidth="94.0" text="Room">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
+      <Button layoutX="26.0" layoutY="21.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="26.0" prefWidth="42.0" text="&lt;" />
    </children>
 </AnchorPane>

@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ChatRoom>
-    <Messages>
-        <Message>
-            <Content>que paso banda</Content>
-            <Sender>pepe</Sender>
-            <Timestamp>Thu Oct 05 17:18:43 CEST 2023</Timestamp>
-        </Message>
-        <Message>
-            <Content>chido wey</Content>
-            <Sender>pepe</Sender>
-            <Timestamp>Thu Oct 05 17:18:49 CEST 2023</Timestamp>
-        </Message>
-    </Messages>
+    <Messages/>
     <Users/>
 </ChatRoom>

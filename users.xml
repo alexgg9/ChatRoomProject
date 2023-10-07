@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Users>
     <User>
+        <Nickname>alex</Nickname>
+    </User>
+    <User>
         <Nickname>antonio lopez </Nickname>
     </User>
     <User>
@@ -18,4 +21,5 @@
     <User>
         <Nickname>fcar16</Nickname>
     </User>
+    <User/>
 </Users>
