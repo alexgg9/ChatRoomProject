@@ -11,21 +11,35 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
 public class UserDAO {
+
+    // Ruta del archivo XML que almacenará los datos de los usuarios
     private static final String XML_FILE = "users.xml";
+
+    // Instancia para almacenar los usuarios
     private Users users;
 
+    // Ruta para la carpeta compartida obtenida de la configuración
     String path = ConfigManager.readSharedFolderPath();
+
+    // Constructor: carga los usuarios desde el archivo XML
     public UserDAO(){
         users = loadUsers(path+"users.xml");
 
     }
 
+    /**
+     * Método para agregar un nuevo usuario
+     * */
     public void addUser(User newUser) {
         if(this.users==null) {
             this.users = new Users();
         }
         this.users.add(newUser);
     }
+
+    /**
+     * Método para guardar los usuarios en un archivo XML
+     * */
     public void saveUsers(String filename) {
         try {
             JAXBContext context = JAXBContext.newInstance(Users.class);
@@ -47,6 +61,9 @@ public class UserDAO {
         }
     }
 
+    /**
+     * Método para cargar los usuarios desde un archivo XML
+     * */
     public Users loadUsers(String filename) {
         try {
             File file = new File(filename);
