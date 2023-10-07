@@ -1,5 +1,6 @@
 package iesfranciscodelosrios.chatroomsproject.controllers;
 
+import iesfranciscodelosrios.chatroomsproject.App;
 import iesfranciscodelosrios.chatroomsproject.model.DAO.ChatRoomDAO;
 import iesfranciscodelosrios.chatroomsproject.model.domain.ChatRoom;
 import iesfranciscodelosrios.chatroomsproject.model.domain.Message;
@@ -8,6 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import java.io.IOException;
+
+
 
 public class ChatController {
 
@@ -22,19 +26,23 @@ public class ChatController {
     @FXML
     private Button sendButton;
 
-    private LoginController loginController;
+
     private ChatRoomDAO chatRoomDAO;
+
+
 
     public ChatController() {
 
         chatRoomDAO = new ChatRoomDAO();
     }
 
+
     public void initialize() {
         sendButton.setOnAction(event -> sendMessage());
-       loadChatMessages();
         userLabel.setText("Usuario: " + LoginController.usuario);
         roomLabel.setText("Sala: " + LoginController.Room);
+        loadChatMessages();
+
     }
 
 
@@ -45,18 +53,32 @@ public class ChatController {
         String message = messageTextField.getText().trim();
         if (!message.isEmpty()) {
             String userNickname = userLabel.getText().replace("Usuario: ", "");
-            chatRoomDAO.sendMessage(userNickname, message);
-            messageTextField.clear();
             chatTextArea.appendText(userNickname + ": " + message + "\n");
+            messageTextField.clear();
+            chatRoomDAO.sendMessage(userNickname, message);
+            chatRoomDAO.saveChat(LoginController.Room);
         }
     }
 
+
     // Este método carga los mensajes anteriores de la sala y los muestra en la vista de chat.
     private void loadChatMessages() {
-        ChatRoom chatRoom = chatRoomDAO.loadChat("");
-        for (Message message : chatRoom.getMessages()) {
-            chatTextArea.appendText(message.getSender() + ": " + message.getContent() + "\n");
+        try {
+            ChatRoom chatRoom = chatRoomDAO.loadChat(LoginController.Room + ".xml");
+            chatTextArea.clear();
+            for (Message message : chatRoom.getMessages()) {
+                chatTextArea.appendText(message.getSender() + ": " + message.getContent() + "\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void switchToLogin() throws IOException {
+
+        App.setRoot("loginView");
+
     }
 }
 

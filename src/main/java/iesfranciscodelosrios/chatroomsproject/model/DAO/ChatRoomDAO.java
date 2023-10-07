@@ -7,12 +7,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-
-
-
 import java.io.File;
-
 import java.util.Date;
+
 
 
 public class ChatRoomDAO {
@@ -21,7 +18,6 @@ public class ChatRoomDAO {
     public ChatRoomDAO() {
         chatRoom = loadChat("");
     }
-
     public void createChatRoom(String chatRoomName) {
 
         if (isChatRoomExist(chatRoomName)) {
@@ -60,19 +56,19 @@ public class ChatRoomDAO {
 
     public void saveChat(String chatRoomName) {
         try {
+            String filename = chatRoomName + ".xml";
+
+            // Configura el contexto de JAXB y el marshaller
             JAXBContext context = JAXBContext.newInstance(ChatRoom.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-            String filename = chatRoomName + ".xml";
-            // Si el archivo XML ya existe, carga los datos existentes
             ChatRoom existingChatRoom = loadChat(filename);
 
-            // Agrega los nuevos datos al ChatRoom existente
+            // Agregar los nuevos datos al ChatRoom existente
             existingChatRoom.getUsers().addAll(chatRoom.getUsers());
             existingChatRoom.getMessages().addAll(chatRoom.getMessages());
 
-            // Guarda los datos actualizados en el archivo XML
+            // Guardar los datos actualizados en el archivo XML
             marshaller.marshal(existingChatRoom, new File(filename));
 
             System.out.println("Chat guardado correctamente en " + filename);
@@ -80,6 +76,9 @@ public class ChatRoomDAO {
             e.printStackTrace();
         }
     }
+
+
+
 
     public ChatRoom loadChat(String filename) {
         try {

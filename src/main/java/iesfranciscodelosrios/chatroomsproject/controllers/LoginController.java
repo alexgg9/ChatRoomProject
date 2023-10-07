@@ -3,6 +3,7 @@ package iesfranciscodelosrios.chatroomsproject.controllers;
 import iesfranciscodelosrios.chatroomsproject.App;
 import iesfranciscodelosrios.chatroomsproject.model.DAO.ChatRoomDAO;
 import iesfranciscodelosrios.chatroomsproject.model.DAO.UserDAO;
+import iesfranciscodelosrios.chatroomsproject.model.domain.ChatRoom;
 import iesfranciscodelosrios.chatroomsproject.model.domain.User;
 import iesfranciscodelosrios.chatroomsproject.shareFolder.ConfigManager;
 import javafx.fxml.FXML;
@@ -32,6 +33,7 @@ public class LoginController implements Initializable {
     @FXML
     private Button loginButton;
 
+    @FXML
     private ChatController chatController;
 
     static String usuario;
@@ -50,21 +52,23 @@ public class LoginController implements Initializable {
         });
     }
 
+    public void setChatController(ChatController chatController) {
+        this.chatController = chatController;
+    }
+
     private void handleLoginButtonAction() throws IOException {
         // Aquí implementa la lógica de autenticación
         UserDAO userDAO = new UserDAO();
         ChatRoomDAO chatRoomDAO = new ChatRoomDAO();
         String path = ConfigManager.readSharedFolderPath();
-         usuario = usernameField.getText();
-         Room = salaField.getText();
+        usuario = usernameField.getText();
+        Room = salaField.getText();
         User user = new User(username);
         userDAO.addUser(user);
         userDAO.saveUsers(path+"users.xml");
-
         chatRoomDAO.createChatRoom(Room);
         chatRoomDAO.saveChat(path + Room);
         chatRoomDAO.joinChat(username);
-
         switchToChat();
 
     }
@@ -75,8 +79,6 @@ public class LoginController implements Initializable {
     @FXML
     private void switchToChat() throws IOException {
         ChatController chatController = new ChatController();
-        //chatController.setUserInfo();
-
         App.setRoot("chat");
 
     }

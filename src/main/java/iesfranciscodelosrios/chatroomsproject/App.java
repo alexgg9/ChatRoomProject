@@ -1,7 +1,4 @@
 package iesfranciscodelosrios.chatroomsproject;
-
-import iesfranciscodelosrios.chatroomsproject.controllers.ChatController;
-import iesfranciscodelosrios.chatroomsproject.controllers.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
