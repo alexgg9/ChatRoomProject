@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ChatRoom>
-    <Messages/>
+    <Messages>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:06:49 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:06:49 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que tal</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:06:59 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:06:49 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que tal</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:06:59 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que haces</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:07:04 CEST 2023</Timestamp>
+        </Message>
+    </Messages>
     <Users/>
 </ChatRoom>

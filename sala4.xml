@@ -16,6 +16,21 @@
             <Sender>alex</Sender>
             <Timestamp>Sat Oct 07 13:56:33 CEST 2023</Timestamp>
         </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:22:46 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:22:46 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que tal</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sat Oct 07 15:22:55 CEST 2023</Timestamp>
+        </Message>
     </Messages>
     <Users/>
 </ChatRoom>
