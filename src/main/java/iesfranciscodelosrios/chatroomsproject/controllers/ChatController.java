@@ -10,7 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import java.io.IOException;
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class ChatController {
@@ -41,9 +42,10 @@ public class ChatController {
         sendButton.setOnAction(event -> sendMessage());
         userLabel.setText("Usuario: " + LoginController.usuario);
         roomLabel.setText("Sala: " + LoginController.Room);
-        loadChatMessages();
+         cargarMensajesCadaDosSegundos();
 
-    }
+
+        }
 
 
 
@@ -74,6 +76,16 @@ public class ChatController {
         }
     }
 
+    public void cargarMensajesCadaDosSegundos() {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                loadChatMessages();
+                System.out.println("Chat cargados");
+            }
+        }, 0, 10000); //
+    }
     @FXML
     private void switchToLogin() throws IOException {
 
