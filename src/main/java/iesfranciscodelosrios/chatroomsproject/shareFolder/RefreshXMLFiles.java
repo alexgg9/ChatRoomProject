@@ -32,7 +32,7 @@ public class RefreshXMLFiles {
 
     /** Método para refrescar los archivos XML
      * en la carpeta especificada
-     * ***************************************/
+     * *****************************************/
     private void refreshXMLFiles() {
         File folder = new File(folderPath);
         // Obtener la carpeta a partir de la ruta especificada
