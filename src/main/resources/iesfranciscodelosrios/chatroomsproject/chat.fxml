@@ -26,6 +26,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Button layoutX="26.0" layoutY="21.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="26.0" prefWidth="42.0" text="&lt;" />
+      <Button layoutX="26.0" layoutY="39.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="26.0" prefWidth="42.0" text="&lt;" />
+      <Button layoutX="508.0" layoutY="39.0" mnemonicParsing="false" onAction="#refreshChat" text="Refrescar" />
    </children>
 </AnchorPane>

@@ -43,8 +43,6 @@ public class ChatController {
         userLabel.setText("Usuario: " + LoginController.usuario);
         roomLabel.setText("Sala: " + LoginController.Room);
          cargarMensajesCadaDosSegundos();
-
-
         }
 
 
@@ -75,6 +73,12 @@ public class ChatController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void refreshChat() {
+        loadChatMessages();
+    }
+
 
     public void cargarMensajesCadaDosSegundos() {
         Timer timer = new Timer();
