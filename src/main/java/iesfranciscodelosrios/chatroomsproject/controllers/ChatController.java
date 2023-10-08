@@ -4,6 +4,7 @@ import iesfranciscodelosrios.chatroomsproject.App;
 import iesfranciscodelosrios.chatroomsproject.model.DAO.ChatRoomDAO;
 import iesfranciscodelosrios.chatroomsproject.model.domain.ChatRoom;
 import iesfranciscodelosrios.chatroomsproject.model.domain.Message;
+import iesfranciscodelosrios.chatroomsproject.shareFolder.ConfigManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -50,13 +51,14 @@ public class ChatController {
     // Este método se llamará cuando el usuario haga clic en el botón de enviar.
     @FXML
     private void sendMessage() {
+        String path = ConfigManager.readSharedFolderPath();
         String message = messageTextField.getText().trim();
         if (!message.isEmpty()) {
             String userNickname = userLabel.getText().replace("Usuario: ", "");
             chatTextArea.appendText(userNickname + ": " + message + "\n");
             messageTextField.clear();
             chatRoomDAO.sendMessage(userNickname, message);
-            chatRoomDAO.saveChat(LoginController.Room);
+            chatRoomDAO.saveChat(path + LoginController.Room);
         }
     }
 
