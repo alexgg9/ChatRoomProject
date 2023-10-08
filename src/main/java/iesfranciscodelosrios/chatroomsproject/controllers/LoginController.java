@@ -23,6 +23,7 @@ public class LoginController implements Initializable {
         username=getUsername();
     }
 
+    // Variable para almacenar el nombre de usuario
     public  String username;
     @FXML
     private TextField usernameField;
@@ -36,6 +37,7 @@ public class LoginController implements Initializable {
     @FXML
     private ChatController chatController;
 
+    // Variables para almacenar el usuario y la sala (estáticas)
     static String usuario;
 
     static String Room;
@@ -52,10 +54,12 @@ public class LoginController implements Initializable {
         });
     }
 
+    // Método para establecer el controlador de chat
     public void setChatController(ChatController chatController) {
         this.chatController = chatController;
     }
 
+    // Manejar la acción del botón de inicio de sesión
     private void handleLoginButtonAction() throws IOException {
         // Aquí implementa la lógica de autenticación
         UserDAO userDAO = new UserDAO();
@@ -69,13 +73,16 @@ public class LoginController implements Initializable {
         chatRoomDAO.createChatRoom(Room);
         chatRoomDAO.saveChat(path + Room);
         chatRoomDAO.joinChat(username);
-        switchToChat();
+        switchToChat();  // Cambiar a la vista del chat
 
     }
 
+    // Método para obtener el nombre de usuario
     public String getUsername(){
         return this.username;
     }
+
+    // Método para cambiar a la vista del chat
     @FXML
     private void switchToChat() throws IOException {
         ChatController chatController = new ChatController();
