@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ChatRoom>
+    <Messages>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:25:38 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:27:51 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:27:51 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que haces</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:28:20 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:27:51 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que haces</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:28:20 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>rata</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:28:43 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:27:51 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que haces</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:28:20 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>rata</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:28:43 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>ola</Content>
+            <Sender>fran</Sender>
+            <Timestamp>Sun Oct 08 23:29:06 CEST 2023</Timestamp>
+        </Message>
+    </Messages>
+    <Users/>
+</ChatRoom>
